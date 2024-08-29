@@ -1,0 +1,30 @@
+version: "3.9"
+
+services:
+  db:
+    container_name: hp_database
+    image: postgres:13
+    volumes:
+      - ./data/db:/var/lib/postgresql/data
+    restart: always
+    environment:
+      POSTGRES_DB: hp
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+  web:
+    container_name: virtual-bookstore
+    build: .
+    volumes:
+      - .:/hp/backend
+      - ./static:/hp/backend/static
+    environment:
+     - SQL_ENGINE=django.db.backends.postgresql
+     - SQL_DATABASE=hp
+     - SQL_USER=postgres
+     - SQL_PASSWORD=postgres
+     - SQL_HOST=db
+
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
