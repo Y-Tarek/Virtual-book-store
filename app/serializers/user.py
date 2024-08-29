@@ -56,3 +56,4 @@ class ReadUserSerializer(serializers.Serializer):
     first_name = serializers.CharField()
     last_name = serializers.CharField()
     email = serializers.EmailField()
+    username = serializers.CharField()
