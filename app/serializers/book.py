@@ -1,15 +1,13 @@
 """
- This File will contain books, reviews Serializers 
+ This File will contain books Serializers 
 
 """
 from rest_framework import serializers
-from app.models import (
-    User,
-    Book,
-    Review
-)
 from .user import (
     ReadUserSerializer
+)
+from .review import (
+    ReadBookReviewSerializer
 )
 
 class ListBookSerializer(serializers.Serializer):
@@ -24,3 +22,4 @@ class RetreieveBookSerializer(ListBookSerializer):
     author = ReadUserSerializer()
     content = serializers.CharField()
     summary = serializers.CharField()
+    reviews = ReadBookReviewSerializer(source="book_reviews",many=True)

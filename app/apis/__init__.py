@@ -6,3 +6,6 @@ from .book import (
     ListBookAPI,
     RetrieveBookAPI
 )
+from .review import (
+    ReviewAPI
+)

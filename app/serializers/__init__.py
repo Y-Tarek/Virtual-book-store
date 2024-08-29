@@ -6,3 +6,7 @@ from .book import (
     ListBookSerializer,
     RetreieveBookSerializer
 )
+from .review import (
+    ReviewSerializer,
+    ReadBookReviewSerializer,
+)

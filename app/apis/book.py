@@ -1,4 +1,4 @@
-""" This File will Hold Books & Reviews APIs """
+""" This File will Hold Books APIs """
 
 from rest_framework.generics import (
   ListAPIView,
@@ -31,5 +31,5 @@ class ListBookAPI(ListAPIView):
 class RetrieveBookAPI(RetrieveAPIView):
     """ Retrieve a single book API """
     serializer_class = RetreieveBookSerializer
-    queryset = Book.objects.select_related("author")
+    queryset = Book.objects.select_related("author").prefetch_related("book_reviews")
     permission_classes = [IsAuthenticated]
