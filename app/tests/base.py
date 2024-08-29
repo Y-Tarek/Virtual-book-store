@@ -19,11 +19,11 @@ class BaseTest(APITestCase):
             func = resolve(reverse_url).func
             module = import_module(func.__module__)
             view = getattr(module, func.__name__)
-            self.assertEquals(view, api_class)
+            self.assertEqual(view, api_class)
 
       def validate_sample_url(self, reverse_url, api_class):
             """
             this function for path validation
             """
             view = resolve(reverse_url).func.view_class
-            self.assertEquals(view, api_class)
+            self.assertEqual(view, api_class)
