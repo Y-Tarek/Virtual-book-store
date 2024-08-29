@@ -34,3 +34,4 @@ drf-writable-nested
 django-phonenumber-field
 phonenumbers
 black
+coverage
