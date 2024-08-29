@@ -6,7 +6,24 @@
 
 from shared.models import TimeStampModel
 from django.db import models
-from django.contrib.auth.models import User
+from django.contrib.auth.models import AbstractUser
+from django.utils.translation import gettext_lazy as _
+
+
+class User(AbstractUser):
+    """User Database Model inheriting from abstract user."""
+
+    username = models.CharField(max_length=150, null=True, blank=True)
+    email = models.EmailField(
+        _("email address"),
+        max_length=125,
+        unique=True,
+        error_messages={
+            "unique": _("A user with that email already exists."),
+        },
+    )
+    USERNAME_FIELD = "email"
+    REQUIRED_FIELDS = ["username", "first_name", "last_name"]
 
 
 class Book(TimeStampModel):

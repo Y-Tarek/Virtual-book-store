@@ -80,7 +80,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'virtualbook.wsgi.application'
 ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS", "*").split(" ")
-
+AUTH_USER_MODEL = "app.User"
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
