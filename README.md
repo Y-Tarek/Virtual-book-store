@@ -44,6 +44,8 @@ https://documenter.getpostman.com/view/28439113/2sAXjKZs4W
            
          2- Set Up Virtual Environment:
             python -m venv venv.
+            source venv/bin/activate  (Linux venv activation)
+            venv/scripts/activate     (Windows venv activation)
             
          3- Install Dependencies:: 
              pip install -r requirememnts.txt.
