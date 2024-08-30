@@ -24,9 +24,9 @@ jobs:
       postgres:
         image: postgres:12
         env:
-          POSTGRES_DB: ${{ secrets.SQL_DATABASE }}
-          POSTGRES_USER: ${{ secrets.SQL_USER }}
-          POSTGRES_PASSWORD: ${{ secrets.SQL_PASSWORD }}
+          POSTGRES_DB: 'virtual-bookstore'
+          POSTGRES_USER: 'postgres'
+          POSTGRES_PASSWORD: 'postgres'
         ports:
           - 5432:5432
 
