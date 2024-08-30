@@ -13,10 +13,10 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      SQL_ENGINE: ${{ secrets.SQL_ENGINE }}
-      SQL_DATABASE: ${{ secrets.SQL_DATABASE }}
-      SQL_USER: ${{ secrets.SQL_USER }}
-      SQL_PASSWORD: ${{ secrets.SQL_PASSWORD }}
+      SQL_ENGINE: 'django.db.backends.postgresql'
+      SQL_DATABASE: 'virtual-bookstore'
+      SQL_USER: 'postgres'
+      SQL_PASSWORD: 'postgres'
       SQL_HOST: 127.0.0.1
       SQL_PORT: 5432
 
